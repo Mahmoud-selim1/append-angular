@@ -1,0 +1,40 @@
+<app-admin-nav></app-admin-nav>
+<div class="container my-5">
+  <div class="alert alert-danger my-3" *ngIf="message.length > 0">
+    {{ message }}
+  </div>
+  <table class="table table-dark text-center">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mail</th>
+        <th>Password</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allData">
+        <td>{{ allData.indexOf(i) + 1 }}</td>
+        <td>{{ i.adminName }}</td>
+        <td title="{{ i.adminName }}">{{ i.adminMail }}</td>
+        <td>{{ i.adminPass }}</td>
+        <td>
+          <button (click)="deleteAdmin(i.id)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+        <td>
+          <a routerLink="/update-admin/{{ i.id }}" class="btn btn-warning"
+            >Update</a
+          >
+        </td>
+        <td>
+          <a routerLink="/static-admin/{{ i.id }}" class="btn btn-primary"
+            >View</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

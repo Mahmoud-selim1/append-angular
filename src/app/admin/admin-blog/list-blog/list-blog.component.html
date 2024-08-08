@@ -1,0 +1,34 @@
+<app-admin-nav></app-admin-nav>
+
+<div class="container my-5">
+  <table class="table table-dark text-center">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category</th>
+
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allData">
+        <td>{{ allData.indexOf(i) + 1 }}</td>
+        <td>{{ i.category }}</td>
+
+        <td>
+          <a routerLink="/static/{{ i.id }}" class="btn btn-info">View</a>
+        </td>
+        <td>
+          <a routerLink="/update-blog/{{ i.id }}" class="btn btn-warning"
+            >Update</a
+          >
+        </td>
+        <td>
+          <button (click)="deleteBlog(i.id)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

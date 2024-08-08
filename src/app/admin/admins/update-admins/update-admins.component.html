@@ -1,0 +1,37 @@
+<app-admin-nav></app-admin-nav>
+<div class="container my-5">
+  <div class="card p-3 bg-dark">
+    <div class="form-group my-2">
+      <label for="name" class="text-white">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="obj.adminName"
+      />
+    </div>
+    <div class="form-group my-2">
+      <label for="mail" class="text-white">Mail</label>
+      <input
+        type="text"
+        id="mail"
+        class="form-control"
+        [(ngModel)]="obj.adminMail"
+      />
+    </div>
+    <div class="form-group my-2">
+      <label for="password" class="text-white">Password</label>
+      <input
+        type="text"
+        id="password"
+        class="form-control"
+        [(ngModel)]="obj.adminPass"
+      />
+    </div>
+    <div class="d-grid my-2">
+      <button (click)="update()" class="btn btn-success">
+        Update Info Of Admin
+      </button>
+    </div>
+  </div>
+</div>

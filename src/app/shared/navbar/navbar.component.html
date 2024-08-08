@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light color pt-3 fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"
+      >Append <span class="text-danger fs-2">.</span></a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item ps-2">
+          <a class="nav-link active" aria-current="page" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item ps-2">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item ps-2">
+          <a class="nav-link" routerLink="/services">Services</a>
+        </li>
+        <li class="nav-item ps-2">
+          <a class="nav-link" routerLink="/portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item ps-2">
+          <a class="nav-link" routerLink="/team">Team</a>
+        </li>
+        <li class="nav-item ps-2">
+          <a class="nav-link" routerLink="/blog">Blog</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/recent">Recent Posts</a>
+            </li>
+            <li><a class="dropdown-item" routerLink="/feature">Feature</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" routerLink="/pricing">Pricing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+      <div *ngIf="login; then loginn; else geust"></div>
+    </div>
+  </div>
+</nav>
+<ng-template #loginn>
+  <button (click)="remve()" class="btn btn-danger">Log out</button>
+</ng-template>
+<ng-template #geust>
+  <a routerLink="/login" class="btn btn-success">Login</a>
+</ng-template>
